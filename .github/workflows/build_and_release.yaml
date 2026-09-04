@@ -1,62 +1,62 @@
-name: Build and release Aseprite
+name名称: Build and release Aseprite名称：构建并发布 Aseprite构建并发布 Aseprite名称：构建并发布 Aseprite构建并发布 Aseprite名称：构建并发布 Aseprite构建并发布 Aseprite名称：构建并发布 Aseprite构建并发布 Aseprite名称：构建并发布 Aseprite构建并发布 Aseprite名称：构建并发布 Aseprite构建并发布 Aseprite名称：构建并发布 Aseprite构建并发布 Aseprite名称：构建并发布 Aseprite
 
-on:
-  push:
-    branches:
+on:触发条件：
+  push: : 推送：
+    branches: 分支：
       - main
-    paths:
+    paths: 路径：
       - 'BuildLog.md'
-  workflow_dispatch:
-env:
-  BUILD_TYPE: Release
+  workflow_dispatch: : 工作流触发： workflow_dispatch: :  workflow_dispatch: : 工作流触发： workflow_dispatch: : 工作流触发：
+env: : 环境变量：
+  BUILD_TYPE: : Release BUILD_TYPE：发布
 
-jobs:
-  fetch-aseprite-info:
-    name: Fetch deps info
-    runs-on: ubuntu-latest
-    outputs:
-      download-link: ${{ steps.aseprite-link.outputs.download-link }}
-      release-tag: ${{ steps.aseprite-link.outputs.release-tag }}
-    steps:
-      - name: Fetch Aseprite release link
-        id: aseprite-link
-        uses: a1393323447/fetch-release@main
-        with:
-            group: aseprite
-            repo: aseprite
-            match: Aseprite-.*?-Source.zip
+jobs:作业：jobs：作业：
+  fetch-aseprite-info:  :  fetch-aseprite-info：
+    name: : Fetch deps info    名称：获取依赖信息
+    runs-on: ubuntu-latest    运行环境：ubuntu-latest
+    outputs:    :    输出：
+      download-link下载链接: ${{ steps.aseprite-link.outputs.download-link }}      下载链接：${{ steps.aseprite-link.outputs.download-link }}      下载链接: ${{ steps.aseprite-link.outputs.download-link }}      下载链接：${{ steps.aseprite-link.outputs.download-link }}
+      release-tag: ${{: ${{ steps.aseprite-link.outputs.release-tag }}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签: ${{: ${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}      发布标签：${{ steps.aseprite-link.outputs.release-tag }}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}steps.aseprite-link.outputs.release-tag}}
+    steps步骤:    :    步骤：
+获取 Aseprite 发布链接      - 名称：获取 Aseprite 发布链接      - 名称获取 Aseprite 发布链接      - 名称：获取 Aseprite 发布链接      - 名称获取 Aseprite 发布链接      - 名称：获取 Aseprite 发布链接获取 Aseprite 发布链接      - 名称：获取 Aseprite 发布链接获取 Aseprite 发布链接      - 名称：获取 Aseprite 发布链接      - 名称取 Aseprite 发布链接      - 名称：获取 Aseprite 发布链接获取 Aseprite 发布链接      - 名称：获取 Aseprite 发布链接
+        id: aseprite-link        ID：aseprite-link
+        uses: a1393323447/fetch-release@main        使用：a1393323447/fetch-release@main
+        with:使用：:
+: : aseprite            分组: : aseprite            组: : seprite            分组: : aseprite            组: : aseprite            分组: : aseprite            组: : seprite            分组: : aseprite
+            仓库            仓库            仓库: : aseprite            仓库: : aseprite            仓库            仓库            仓库: : seprite            仓库: : aseprite            仓库            仓库            仓库: : aseprite            仓库: : aseprite            仓库            仓库            仓库: : seprite            仓库: : aseprite
+            匹配: : Aseprite-.*?-Source.zip            匹配: :             匹配: : Aseprite-.*?-Source.zip            匹配: : Aseprite-.*?-Source.zip            匹配: : Aseprite-.*?-Source.zip            匹配: :             匹配: : Aseprite-.*?-Source.zip            匹配: : Aseprite-.*?-Source.zip
 
-  create-release:
-    name: Create Release
-    runs-on: ubuntu-latest
-    needs: fetch-aseprite-info
-    permissions:
-      contents: write
-    outputs:
-      download-link: ${{ needs.fetch-aseprite-info.outputs.download-link }}
-      release-tag: ${{ needs.fetch-aseprite-info.outputs.release-tag }}
-    steps:
-      - uses: actions/checkout@v7
-      - uses: ncipollo/release-action@v1.21.0
+  create-release:  创建发布：: 创建发布：:  创建发布：: 创建发布：:
+    name: : Create Release 名称: : 创建发布    名称: : 创建发布名称: : 创建发布    名称: : 创建发布 名称: : 创建发布    名称: : 创建发布名称: : 创建发布
+    runs-on: ubuntu-latest    运行环境：ubuntu-latest
+    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info    需要: : fetch-aseprite-info
+    permissions    权限:    权限：:    权限：:    权限:        权限:    权限：:    权限：:    权限:    权限：:    权限：:
+ 写入      内容 写入      内容 编写      内容: : w写入      内容: : 写写入      内容入      内容 写      内容 ite      内容 入      内容       内容 ite      内容 入      内容       容 写      内容 写入      内容 写      内容 写      内容 入      内容 写      内容 ite      内容 入      内容 入      内容       内容 ite      内容 入      内容       内容: : 编写      内容: : 编写入      内容: : 编写      内容: : 编写      内容: : 写入      内容: : 编写      内容: : ite      内容 写入      内容: : 写入      内容: 写      内容: : ite      内容 写入      内容: : 写入      内容: : 写入      内容: :       内容: : 编写      内容: : 编写入      内容: : 编写      内容: : 编写      内容: : 写入      内容: : 编写      内容: : ite      内容 写入      内容: : 写入      内容: : 写入      内容: : 写入      内容: : 写入      内容: 写      内容: : ite      内容 写入      内容 写入      内容: : 写入      内容: : 写入      内容 写入      内容: : 写入      内容: : 写入      内容: : 编写
+    outputs输出:    :        输出:    :    输出：    输出:    :        输出:    :    输出：    输出:    :        出:    :    出：    输出:    :        出:    :    输
+      download-link下载链接: ${{: ${{ needs.fetch-aseprite-info.outputs.download-link }}: ${{: ${{ needs.fetch-aseprite-info.outputs.download-link }}      下载链接: ${{: ${{ needs.fetch-aseprite-info.outputs.download-link }}: ${{: ${{ needs.fetch-aseprite-info.outputs.download-link }}
+      release-tag发布标签: ${{ needs.fetch-aseprite-info.outputs.release-tag }}      发布标签: ${{ needs.fetch-aseprite-info.outputs.release-tag }}
+步骤:
+      - uses: aactions/checkout@v7      - 使用: : aactions/checkout@v7      - 使用: aactions/checkout@v7      - 使用: aactions/checkout@v7      - 使用: aactions/checkout@v7      - 使用: aaactions/checkout@v7      - 使用: aactions/checkout@v7      - 使用: aactions/checkout@v7      - 使用: actions/checkout@v7
+      - uses: ncipollo/release-action@v1.21.0      - 使用: ncipollo/release-action@v1.21.0
         with:
-          tag: ${{ needs.fetch-aseprite-info.outputs.release-tag }}
-          body: Aseprite-${{ needs.fetch-aseprite-info.outputs.release-tag }}
-          skipIfReleaseExists: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ needs.fetch-aseprite-info.outputs.release-tag }}          标签: ${{ needs.fetch-aseprite-info.outputs.release-tag }}
+seprite-$seprite-$          正文          正文          正文: Aseprite-${{ needs.fetch-aseprite-info.outputs.release-tag }}          正文: Aseprite-${{ needs.fetch-aseprite-info.outputs.release-tag }}
+
+          令牌: ${{ secrets.GITHUB_TOKEN }}          令牌: ${{ secrets.GITHUB_TOKEN }}          令牌: ${{ secrets.GITHUB_TOKEN }}          令牌: ${{ secrets.GITHUB_TOKEN }}          令牌: ${{ secrets.GITHUB_TOKEN }}          令牌: ${{ secrets.GITHUB_TOKEN }}          令牌: ${{ secrets.GITHUB_TOKEN }}          令牌: ${{ secrets.GITHUB_TOKEN }}
 
   build-aseprite:
-    name: Build Aseprite
-    needs: create-release
-    permissions:
-      contents: write
-    runs-on: ${{ matrix.os }}
-    strategy:
-        matrix:
-          os: [ windows-latest, ubuntu-latest, macOS-latest ]
+ild Aseprite    名称: 构建 Aseprite    名称: 构建 Aseprite    名称: 构建 Aseprite
+    needs: 创建发布    需要: 创建发布版本    需要: 创建发布    需要: 创建发布    需要: 创建发布版本    需要: 创建发布
+    权限:    权限:    权限:    权限:
+      内容: w写入      内容: 编写      内容w写入      内容: 编写
+: ${{ matrix.os }}    运行于: 
+略策略:    策略:
+        matrix:        矩阵:
+          操作系统: [ windows-latest ]          操作系统: [ windows-latest, ubuntu-latest, macOS-latest ]
         fail-fast: false
     steps:
-      - name: Install Dependencies
-        if: runner.os == 'Linux'
+      - name: 安装依赖项      - 名称安装依赖项      - 名称安装依赖项
+: rrunner.os == 'Linux'        如果: 
         shell: bash
         run: |
           sudo apt-get update -qq
@@ -64,16 +64,16 @@ jobs:
             libpixman-1-dev libfreetype6-dev libharfbuzz-dev zlib1g-dev \
             libx11-dev libxcursor-dev libxi-dev libxrandr-dev libgl1-mesa-dev \
             libfontconfig1-dev
-      - uses: actions/checkout@v7
-      - name: Install Aseprite
+      - uses: aactions/checkout@v7      - 使用: actions/checkout@v7
+      - name: 安装Aseprite      - 名称安装 Aseprite      - 名称: 安装 Aseprite
         shell: bash
         run: |
           git clone --recurse-submodules -j8 https://github.com/aseprite/aseprite --branch ${{ needs.create-release.outputs.release-tag }}
-      - name: Install Skia
-        working-directory: aseprite
+      - name: 安装 Skia      - 名称: 安装 Skia
+        working-directory: aseprite工作目录: aseprite
         shell: bash
         run: |
-          if [[ "${{ runner.os }}" == "Windows" ]] ; then
+          if [[ "${{ runner.os }}" == "Windows" ]] ; then          如果 [[ "${{ runner.os }}" == "Windows" ]] ; 则
             choco install wget -y --no-progress
             wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-Windows-Release-x64.zip
             unzip Skia-Windows-Release-x64.zip -d skia
