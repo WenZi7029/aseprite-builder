@@ -52,7 +52,7 @@ ild Aseprite    名称: 构建 Aseprite    名称: 构建 Aseprite    名称: �
 : ${{ matrix.os }}    运行于: 
 略策略:    策略:
         matrix:        矩阵:
-          操作系统: [ windows-latest ]          操作系统: [ windows-latest, ubuntu-latest, macOS-latest ]
+          操作系统: [ windows-latest ]          操作系统: [ windows-latest ]
         fail-fast: false
     steps:
       - name: 安装依赖项      - 名称安装依赖项      - 名称安装依赖项
